@@ -32,7 +32,7 @@ const registerUser = async (req, res) => {
 
     const user = await User.create({...req.body});
 
-    const jwtToken = user.getJwtToken();
+    const token = user.getJwtToken();
 
     res.status(StatusCodes.CREATED).json({user:{id:user._id, name:user.username, email:user.email}, token});
 }
