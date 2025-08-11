@@ -34,7 +34,7 @@ const registerUser = async (req, res) => {
 
     const jwtToken = user.getJwtToken();
 
-    res.status(StatusCodes.CREATED).json({user:{id:user._id, name:user.username, email:user.email}, jwtToken});
+    res.status(StatusCodes.CREATED).json({user:{id:user._id, name:user.username, email:user.email}, token});
 }
 
 module.exports = {
