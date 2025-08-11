@@ -34,7 +34,8 @@ app.use(xss());
 
 // routes
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/jobs', authMiddleware, jobsRouter);
+//app.use('/api/v1/jobs', authMiddleware, jobsRouter);
+app.use('/api/v1/jobs', jobsRouter); //Temporary change, to test if it works when deployed
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
