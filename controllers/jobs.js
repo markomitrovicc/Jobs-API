@@ -3,8 +3,8 @@ const Job = require('../models/Job');
 const {StatusCodes, REQUESTED_RANGE_NOT_SATISFIABLE} = require('http-status-codes');
 
 const getAllJobs = async (req, res) => {
-    //const jobs = await Job.find({createdBy : req.user.id});
-    const jobs = await Job.find({});
+    const jobs = await Job.find({createdBy : req.user.id});
+    // const jobs = await Job.find({});
     res.status(StatusCodes.OK).json({jobs, count: jobs.length});
 }
 
