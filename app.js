@@ -33,13 +33,15 @@ app.use(cors());
 app.use(xss());
 
 // routes
-app.use('/', (req,res) => {
-  res.send('Jobs API'); // Dummy route to test if deployment works
-})
+
 
 app.use('/api/v1/auth', authRouter);
 //app.use('/api/v1/jobs', authMiddleware, jobsRouter);
 app.use('/api/v1/jobs', jobsRouter); //Temporary change, to test if it works when deployed
+
+app.use('/', (req,res) => {
+  res.send('Jobs API'); // Dummy route to test if deployment works
+})
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
